@@ -1,36 +1,49 @@
-    const terminalBody = document.getElementById('terminalBody');
-    const terminalInput = document.getElementById('terminalInput');
+const terminalBody = document.getElementById('terminalBody');
+const terminalInput = document.getElementById('terminalInput');
 
-    // Aktuálny nastavený jazyk (sk / en)
-    let currentLang = 'sk';
+// Aktuálny nastavený jazyk (sk / en)
+let currentLang = 'sk';
 
-    // Definované príkazy a ich lokalizované výstupy
-    const commands = {
-      sk: {
-        help: `
+// Definované príkazy a ich lokalizované výstupy
+const commands = {
+  sk: {
+    help: `
           <div class="prompt">Dostupné príkazy:</div>
           <ul style="list-style: none; padding-left: 10px; line-height: 1.6;">
             <li><span class="highlight">lang [sk/en]</span> - Zmena jazyka (napr. <code class="keyword">lang en</code>)</li>
             <li><span class="highlight">ls / help</span> - Zoznam dostupných príkazov</li>
             <li><span class="highlight">clear</span> - Vyčistí históriu terminálu</li>
             <br>
-            <li><span class="highlight">env</span> - Moje developerské prostredie a setup</li>
+            <li><span class="highlight">env</span> - Moje developerské prostredie</li>
             <li><span class="highlight">skills</span> - Technické zručnosti a technológie</li>
-            <li><span class="highlight">code-pr</span> - Moje programátorské projekty</li>
-            <li><span class="highlight">life-pr</span> - Osobné projekty a úspechy</li>
+            <li><span class="highlight">code</span> - Moje programátorské projekty</li>
+            <li><span class="highlight">life</span> - Osobné projekty a úspechy</li>
+            <li><span class="highlight">exp</span> - Pracovné skúsenosti</li>
+            <li><span class="highlight">edu</span> - Vzdelanie</li>
             <br>
+            <li><span class="highlight">about</span> - V skratke o mne</li>
             <li><span class="highlight">hobby</span> - Čomu sa venujem vo voľnom čase</li>
             <li><span class="highlight">matrix</span> - Spustí easter-egg v konzole</li>
             <li><span class="highlight">contact</span> - Zobrazí kontaktné údaje a životopis</li>
           </ul>
         `,
-        ls: `
+    ls: `
           <div class="prompt">Dostupné sekcie (príkazy):</div>
           <div style="display: flex; gap: 15px; flex-wrap: wrap; font-family: monospace;">
-            <span class="highlight">lang</span> <span class="highlight">env</span> <span class="highlight">skills</span> <span class="highlight">code-pr</span> <span class="highlight">life-pr</span> <span class="highlight">hobby</span> <span class="highlight">matrix</span> <span class="highlight">contact</span> <span class="highlight">clear</span>
+            <span class="highlight">neofetch</span>
+            <span class="highlight">env</span>
+            <span class="highlight">skills</span>
+            <span class="highlight">code</span>
+            <span class="highlight">life</span>
+            <span class="highlight">exp</span>
+            <span class="highlight">edu</span>
+            <span class="highlight">about</span>
+            <span class="highlight">hobby</span>
+            <span class="highlight">matrix</span>
+            <span class="highlight">contact</span>
           </div>
         `,
-        env: `
+    env: `
           <div class="prompt">Moje dev prostredie</div>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 15px;">
             <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 12px; border-radius: 6px; display: flex; align-items: center; gap: 12px;">
@@ -63,7 +76,7 @@
             </div>
           </div>
         `,
-        skills: `
+    skills: `
           <div class="prompt">Tech skills & Technológie</div>
           <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 10px;">
             <div> 
@@ -93,7 +106,7 @@
             </div>
           </div>
         `,
-        'code-pr': `
+    code: `
           <div class="prompt">Ukážka mojej práce a technických riešení</div>
           <div class="project-grid">
             
@@ -112,7 +125,7 @@
               </ul>
               <div style="margin-top: 12px;">
                 <a href="https://github.com/kytka9/personal-portfolio-terminal" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-input); border: 1px solid var(--border-color); padding: 5px 12px; border-radius: 4px; font-size: 0.85rem;">
-                  <i class="fab fa-github"></i> GitHub Repository
+                  <i class="fab fa-github"></i> Code
                 </a>
               </div>
             </div>
@@ -122,6 +135,8 @@
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                   <h3 class="highlight" style="margin: 0;">kytka9notes</h3>
                   <div class="tech-badge-container">
+                    <i class="fab fa-html5" style="color: #e34f26; font-size: 1.1rem;"></i>
+                    <i class="fab fa-css3-alt" style="color: #1572b6; font-size: 1.1rem;"></i>
                     <i class="fab fa-js" style="color: #f7df1e;"></i>
                   </div>
                 </div>
@@ -139,7 +154,9 @@
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                   <h3 class="highlight" style="margin: 0; font-size: 1.1rem;">Colorado FansHub</h3>
                   <div class="tech-badge-container">
-                    <i class="fab fa-html5" style="color: #e34f26;"></i>
+                    <i class="fab fa-html5" style="color: #e34f26; font-size: 1.1rem;"></i>
+                    <i class="fab fa-css3-alt" style="color: #1572b6; font-size: 1.1rem;"></i>
+                    <i class="fab fa-js" style="color: #f7df1e;"></i>
                   </div>
                 </div>
                 <p style="margin-bottom: 15px;">Interaktívna webová platforma pre fanúšikov NHL. Implementácia responzívneho dizajnu a dynamického obsahu.</p>
@@ -152,38 +169,190 @@
 
           </div>
         `,
-        'life-pr': `
+    life: `
           <div class="prompt">Projekty, ktorých som bol súčasťou</div>
           <div class="project-grid">
             <div class="project-card">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                 <h3 class="highlight" style="margin: 0;"><i class="fa-solid fa-person-snowboarding"></i> Take a Deck</h3>
+                <div class="tech-badge-container">
+                    <small>2010-2014</small>
+                  </div>
               </div>
               <p style="margin-bottom: 12px;">Organizátor kultúrno-športových podujatí pod záštitou Džizo crew. Zameranie na komunitný rozvoj a extrémne športy.</p>
               <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                <a href="https://www.facebook.com/DzizoCrew/" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-brands fa-facebook"></i> Facebook</a>
-                <a href="http://makovica.sk" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i> Makovica</a>
+                <a href="https://www.facebook.com/DzizoCrew/" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://maps.app.goo.gl/VnCCcKmAKyNTrxwm7" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="http://makovica.sk" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i></a>
               </div>
             </div>
 
             <div class="project-card">
-              <h3 class="highlight" style="margin-bottom: 10px;"><i class="fa-brands fa-redhat"></i> WeifouDilla</h3>
-              <p>Kľúčový spolutvorca online módneho zoskupenia. Špecializácia na kurátorstvo, reštaurovanie a udržateľný predaj vzácnych vintage kúskov.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 class="highlight" style="margin-bottom: 10px;"><i class="fa-brands fa-redhat"></i> WeifouDilla</h3>
+                <div class="tech-badge-container">
+                    <small>2017-2019</small>
+                </div>
+              </div>
+              <p>Kmeňový spolutvorca fashion projektu od vzniku po prevádzku, správa e-shopu, sociálnych sietí a budovanie online komunít. Zameranie na udržateľný predaj vzácnych vintage kúskov.</p>
             </div>
           </div>
         `,
-        hobby: `
+    exp: `
+          <div class="prompt">Pracovné skúsenosti</div>
+          <div class="project-grid">
+            
+            <div class="project-card" style="grid-column: 1 / -1;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+                <h3 class="highlight" style="margin: 0;">Výrobný pracovník / dozorca</h3>                
+                <div class="tech-badge-container">2023 - 2025</div>
+              </div>
+              <p style="margin: 10px 0;">Vysoká miera presnosti pri tvarovaní kompozitných foriem pre letecký priemysel. Schopnosť neomylnej práce podľa zložitých technických výkresov (Blueprint Reading) s dôrazom na nulovú chybovosť a dodržanie deadline-ov.</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/FA6zo3THeJUpKKJKA" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i> Laupheim, DE</a>
+                <a href="https://www.piekenbrink.de" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i> piekenbrink.de</a>
+                <p>Piekenbrink GmbH, 88471 Laupheim, DE</p>
+              </div>
+            </div>  
+
+            <div class="project-card" style="grid-column: 1 / -1;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+                <h3 class="highlight" style="margin: 0;">Teamleader</h3>                
+                <div class="tech-badge-container">2022 - 2023</div>
+              </div>
+              <p style="margin: 10px 0;">Zabezpečenie 100 % integrity údajov v databáze, komunikácia v anglicky hovoriacom tíme.</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/HxEnTy4gPkSb8aM29" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i> Delft, NL</a>
+                <a href="https://www.hanos.nl/nl/groothandel/HANOS-Denhaag-Delft" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i> hanos.nl</a>
+                <p>Hanos Horeca Groothandel, 2616 LZ Delft, NL</p>
+              </div>
+            </div>  
+
+            <div class="project-card" style="grid-column: 1 / -1;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+                <h3 class="highlight" style="margin: 0;">Kuriér</h3>                
+                <div class="tech-badge-container">2019 - 2022</div>
+              </div>
+              <p style="margin: 10px 0;">Práca v digitálnych systémoch,
+                riešenie nečakaných problémov v teréne a dodržiavanie časových termínov.</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/JozEioePCoX9ujge9" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i> Dordrecht, NL</a>
+                <p>MCR Transport B.V., 3316 KH Dordrecht, NL</p>
+              </div>
+            </div>  
+
+            <div class="project-card" style="grid-column: 1 / -1;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+                <h3 class="highlight" style="margin: 0;">Housekeeping</h3>                
+                <div class="tech-badge-container">2017 - 2019</div>
+              </div>
+              <p style="margin: 10px 0;">Starostlivosť o prevádzku apartmánov a zabezpečovanie požiadaviek hostí.</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/zfUR3wkDUres35FU6" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i> Hermagor, AT</a>
+                <a href="https://www.vmglanz.at" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i> vmglanz.at</a>
+                <p>VM Glanz Gmbh, 9620 Hermagor, AT</p>
+              </div>
+            </div>  
+
+          </div>
+        `,
+    edu: `
+          <div class="prompt">Vzdelanie</div>
+          <div class="project-grid">
+            <div class="project-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 class="highlight" style="margin: 0;">ITnetwork Academy Slovensko</h3>
+                <div class="tech-badge-container">
+                    <small>2025</small>
+                  </div>
+              </div>
+              <p style="margin-bottom: 12px;">OOP, tvorba webových aplikácií v Jave, práca s databázami, UML</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://www.itnetwork.sk" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i></a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 class="highlight" style="margin: 0;">Ekonomická Univerzita v Bratislave</h3>
+                <div class="tech-badge-container">
+                    <small>2014 - 2016</small>
+                  </div>
+              </div>
+              <p style="margin-bottom: 12px;">Fakulta medzinárodného obchodu (tri semestre)</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/hKj9dK7ARJSJshZa7" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="https://www.euba.sk" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i></a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 class="highlight" style="margin: 0;">Gymnázium L. Stöckela v Bardejove</h3>
+                <div class="tech-badge-container">
+                    <small>2009 - 2013</small>
+                  </div>
+              </div>
+              <p style="margin-bottom: 12px;">Zameranie: matematika a geografia</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/hr3njGnMAe1zVMDD8" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="https://gymlsbj.edupage.org" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i></a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 class="highlight" style="margin: 0;">ZUŠ Michala Vileca v Bardejove</h3>
+                <div class="tech-badge-container">
+                    <small>2001-2009</small>
+                  </div>
+              </div>
+              <p style="margin-bottom: 12px;">Maľba, kresba, modelovanie, fotografovanie, linorez</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/DDBL37R9UAfFmo5B6" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="https://www.zusmvileca.com" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i></a>
+              </div>
+            </div>
+
+          </div>
+        `,
+    neofetch: `
+        <div class="warp-block">
+          <div class="output-text">
+            <pre style="font-family: monospace; line-height: 1.3; margin: 0;">
+          ██╗██╗  ██╗    <span class="highlight">kytka9</span>@<span class="keyword">portfolio-os</span>
+          ██║██║ ██╔╝    -------------------------
+          ██║█████╔╝     OS: Ján Klimek WebOS v1.0.0
+          ██║██╔═██╗     Kernel: Human_Brain_2026.06
+        ████║██║  ██╗    Uptime: 30+ years
+        ╚═══╝╚═╝  ╚═╝    Shell: kytka-sh 2.4
+                         IDE: VS Code / Cursor
+                         Fav-Lang: JavaScript
+
+                        <span style="display: inline-block; width: 12px; height: 12px; background: var(--warp-accent); border-radius: 2px;"></span> <span style="display: inline-block; width: 12px; height: 12px; background: var(--warp-accent-green); border-radius: 2px;"></span> <span style="display: inline-block; width: 12px; height: 12px; background: var(--warp-text-main); border-radius: 2px;"></span> <span style="display: inline-block; width: 12px; height: 12px; background: var(--warp-text-muted); border-radius: 2px;"></span>
+            </pre>
+          </div>
+        </div>
+        `,
+    about: `
+          <div class="output-text" id="welcomeOutput">
+          <p>...</p>
+          <p>Moje základy síce stoja na niekoľkomesačnom kurze, ale môj skutočný workflow formuje dnešná digitálna doba. V ére AI je domáce vzdelávanie efektívnejšie než kedykoľvek predtým. Nevnímam AI ako skratku, ale ako akcelerátor – umožňuje mi rýchlo prenikať do hĺbky komplexných problémov, analyzovať osvedčené postupy (best practices) a neustále zvyšovať kvalitu môjho kódu. Vďaka tomu dokážem držať krok s najnovšími trendmi a prinášať riešenia, ktoré sú rýchle, moderné a čisté.</p>
+          </div>
+          <p>...</p>
+          `,
+    hobby: `
           <div class="prompt">Koníčky, ktorým sa venujem vo voľnom čase</div>
           <p style="margin-bottom: 12px;">🌲 Bushcraft <small style="color: var(--text-muted);">// Status: Plne offline v prírode</small></p>
           <p style="margin-bottom: 12px;">⚔️ Age of Empires 2 <small style="color: var(--text-muted);">// Strategická úroveň: Expert</small></p>
-          <p style="margin-bottom: 12px;">🏂 Snowboarding <small style="color: var(--text-muted);">// Gravitácia: Otestovaná na svahu</small></p>
-        `,
-        matrix: `
+          <p style="margin-bottom: 12px;">🏂 Snowboarding <small style="color: var(--text-muted);">// Gravitácia: Otestovaná na svahu</small></p>         
+          `,
+    matrix: `
           <div class="prompt">./matrix.sh</div>
           <p style="color: var(--warp-accent-green); font-weight: bold;"><i class="fas fa-user-secret"></i> Zobuď sa, Neo... Matrix ťa ovláda !!!</p>
           <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Skontroluj si vývojársku konzolu (F12) pre prekvapenie!</p>
         `,
-        contact: `
+    contact: `
           <div class="prompt">Kontaktné údaje & Životopis</div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
             <p><i class="fas fa-envelope" style="width: 25px; color: var(--warp-accent);"></i> <strong>Email:</strong> <a href="mailto:klimekjani@gmail.com">klimekjani@gmail.com</a></p>
@@ -193,10 +362,9 @@
             <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent-green);"></i> <strong>Životopis (SK):</strong> <a href="https://github.com/kytka9/personal-portfolio-terminal/blob/master/resume_sk.html" target="_blank" class="highlight">Otvoriť životopis</a></p>
           </div>
         `,
-        cv: `Otváram životopis... <a href="https://github.com/kytka9/personal-portfolio-terminal/blob/master/resume_sk.html" class="warp-link" target="_blank">Klikni sem pre otvorenie cv.html</a>`
-      },
-      en: {
-        help: `
+  },
+  en: {
+    help: `
           <div class="prompt">Available commands:</div>
           <ul style="list-style: none; padding-left: 10px; line-height: 1.6;">
             <li><span class="highlight">lang [sk/en]</span> - Change language (e.g. <code class="keyword">lang sk</code>)</li>
@@ -213,13 +381,13 @@
             <li><span class="highlight">contact</span> - Display contact details & CV</li>
           </ul>
         `,
-        ls: `
+    ls: `
           <div class="prompt">Available sections (commands):</div>
           <div style="display: flex; gap: 15px; flex-wrap: wrap; font-family: monospace;">
             <span class="highlight">lang</span> <span class="highlight">env</span> <span class="highlight">skills</span> <span class="highlight">code-pr</span> <span class="highlight">life-pr</span> <span class="highlight">hobby</span> <span class="highlight">matrix</span> <span class="highlight">contact</span> <span class="highlight">clear</span>
           </div>
         `,
-        env: `
+    env: `
           <div class="prompt">My Dev Environment</div>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 15px;">
             <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 12px; border-radius: 6px; display: flex; align-items: center; gap: 12px;">
@@ -252,7 +420,7 @@
             </div>
           </div>
         `,
-        skills: `
+    skills: `
           <div class="prompt">Tech Skills & Stack</div>
           <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 10px;">
             <div> 
@@ -282,7 +450,7 @@
             </div>
           </div>
         `,
-        'code-pr': `
+    'code-pr': `
           <div class="prompt">Showcase of my work and technical solutions</div>
           <div class="project-grid">
             
@@ -341,7 +509,7 @@
 
           </div>
         `,
-        'life-pr': `
+    'life-pr': `
           <div class="prompt">Projects I have been part of</div>
           <div class="project-grid">
             <div class="project-card">
@@ -361,18 +529,18 @@
             </div>
           </div>
         `,
-        hobby: `
+    hobby: `
           <div class="prompt">My personal interests and hobbies</div>
           <p style="margin-bottom: 12px;">🌲 Bushcraft <small style="color: var(--text-muted);">// Status: Fully offline in nature</small></p>
           <p style="margin-bottom: 12px;">⚔️ Age of Empires 2 <small style="color: var(--text-muted);">// Strategy level: Expert</small></p>
           <p style="margin-bottom: 12px;">🏂 Snowboarding <small style="color: var(--text-muted);">// Gravity: Tested on slopes</small></p>
         `,
-        matrix: `
+    matrix: `
           <div class="prompt">./matrix.sh</div>
           <p style="color: var(--warp-accent-green); font-weight: bold;"><i class="fas fa-user-secret"></i> Wake up, Neo... The Matrix has you !!!</p>
           <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Check your developer console (F12) for a surprise!</p>
         `,
-        contact: `
+    contact: `
           <div class="prompt">Contact Details & Resume</div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
             <p><i class="fas fa-envelope" style="width: 25px; color: var(--warp-accent);"></i> <strong>Email:</strong> <a href="mailto:klimekjani@gmail.com">klimekjani@gmail.com</a></p>
@@ -382,71 +550,71 @@
             <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent-green);"></i> <strong>Resume (SK):</strong> <a href="https://github.com/kytka9/personal-portfolio-terminal/blob/master/resume_sk.html" target="_blank" class="highlight">Open Resume</a></p>
           </div>
         `,
-        cv: `Opening resume... <a href="https://github.com/kytka9/personal-portfolio-terminal/blob/master/resume_sk.html" class="warp-link" target="_blank">Click here to open cv.html</a>`
-      }
-    };
+    cv: `Opening resume... <a href="https://github.com/kytka9/personal-portfolio-terminal/blob/master/resume_sk.html" class="warp-link" target="_blank">Click here to open cv.html</a>`
+  }
+};
 
-    // Počúvanie na stlačenie klávesu Enter
-    terminalInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        const rawInput = this.value.trim();
-        const args = rawInput.split(' ');
-        const cmd = args[0].toLowerCase();
+// Počúvanie na stlačenie klávesu Enter
+terminalInput.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    const rawInput = this.value.trim();
+    const args = rawInput.split(' ');
+    const cmd = args[0].toLowerCase();
 
-        if (rawInput === '') return;
+    if (rawInput === '') return;
 
-        // Spracovanie príkazu clear
-        if (cmd === 'clear') {
-          terminalBody.innerHTML = '';
-          this.value = '';
-          return;
-        }
+    // Spracovanie príkazu clear
+    if (cmd === 'clear') {
+      terminalBody.innerHTML = '';
+      this.value = '';
+      return;
+    }
 
-        // Generovanie náhodného času odozvy
-        const fakeTime = (Math.random() * 0.05 + 0.01).toFixed(3);
-        let output = '';
+    // Generovanie náhodného času odozvy
+    const fakeTime = (Math.random() * 0.05 + 0.01).toFixed(3);
+    let output = '';
 
-        // Spracovanie príkazu lang
-        if (cmd === 'lang') {
-          const targetLang = args[1] ? args[1].toLowerCase() : '';
-          if (targetLang === 'sk' || targetLang === 'en') {
-            currentLang = targetLang;
-            document.documentElement.lang = currentLang;
+    // Spracovanie príkazu lang
+    if (cmd === 'lang') {
+      const targetLang = args[1] ? args[1].toLowerCase() : '';
+      if (targetLang === 'sk' || targetLang === 'en') {
+        currentLang = targetLang;
+        document.documentElement.lang = currentLang;
 
-            if (currentLang === 'sk') {
-              output = `Jazyk bol zmenený na <span class="highlight">Slovenčinu</span>. Pre zoznam príkazov napíš <code class="keyword">help</code>.`;
-              terminalInput.placeholder = "Napíš príkaz (help, ls, env, skills, code-pr)...";
-            } else {
-              output = `Language changed to <span class="highlight">English</span>. Type <code class="keyword">help</code> to see available commands.`;
-              terminalInput.placeholder = "Type a command (help, ls, env, skills, code-pr)...";
-            }
-          } else {
-            output = currentLang === 'sk'
-              ? `<span style="color: #ff5f56;">Chyba: Zlý argument.</span> Použi <code class="keyword">lang sk</code> alebo <code class="keyword">lang en</code>.`
-              : `<span style="color: #ff5f56;">Error: Invalid argument.</span> Use <code class="keyword">lang sk</code> or <code class="keyword">lang en</code>.`;
-          }
+        if (currentLang === 'sk') {
+          output = `Jazyk bol zmenený na <span class="highlight">Slovenčinu</span>. Pre zoznam príkazov napíš <code class="keyword">help</code>.`;
+          terminalInput.placeholder = "Napíš príkaz (help, ls, env, skills)...";
         } else {
-          // Zistenie výstupu podľa aktuálneho jazyka
-          output = commands[currentLang][cmd];
-
-          if (!output) {
-            output = currentLang === 'sk'
-              ? `<span style="color: #ff5f56;">Error: Príkaz "${rawInput}" nebol nájdený.</span> Použi "help".`
-              : `<span style="color: #ff5f56;">Error: Command "${rawInput}" not found.</span> Use "help".`;
-          }
+          output = `Language changed to <span class="highlight">English</span>. Type <code class="keyword">help</code> to see available commands.`;
+          terminalInput.placeholder = "Type a command (help, ls, env, skills)...";
         }
+      } else {
+        output = currentLang === 'sk'
+          ? `<span style="color: #ff5f56;">Chyba: Zlý argument.</span> Použi <code class="keyword">lang sk</code> alebo <code class="keyword">lang en</code>.`
+          : `<span style="color: #ff5f56;">Error: Invalid argument.</span> Use <code class="keyword">lang sk</code> or <code class="keyword">lang en</code>.`;
+      }
+    } else {
+      // Zistenie výstupu podľa aktuálneho jazyka
+      output = commands[currentLang][cmd];
 
-        // Ak používateľ zavolá matrix, vygenerujeme aj log do F12 konzoly
-        if (cmd === 'matrix') {
-          console.clear();
-          console.log("%cWake up, Neo...", "color: #34d399; font-size: 20px; font-weight: bold;");
-          console.log("%cThe Matrix has you...", "color: #34d399; font-size: 14px;");
-        }
+      if (!output) {
+        output = currentLang === 'sk'
+          ? `<span style="color: #ff5f56;">Error: Príkaz "${rawInput}" nebol nájdený.</span> Použi "help".`
+          : `<span style="color: #ff5f56;">Error: Command "${rawInput}" not found.</span> Use "help".`;
+      }
+    }
 
-        // Vytvorenie nového Warp bloku
-        const newBlock = document.createElement('div');
-        newBlock.className = 'warp-block';
-        newBlock.innerHTML = `
+    // Ak používateľ zavolá matrix, vygenerujeme aj log do F12 konzoly
+    if (cmd === 'matrix') {
+      console.clear();
+      console.log("%cWake up, Neo...", "color: #34d399; font-size: 20px; font-weight: bold;");
+      console.log("%cThe Matrix has you...", "color: #34d399; font-size: 14px;");
+    }
+
+    // Vytvorenie nového Warp bloku
+    const newBlock = document.createElement('div');
+    newBlock.className = 'warp-block';
+    newBlock.innerHTML = `
           <div class="prompt-line">
             <div>~/personal-portfolio git:(<span>master</span>)</div>
             <div>(${fakeTime}s)</div>
@@ -455,16 +623,16 @@
           <div class="output-text">${output}</div>
         `;
 
-        // Pridanie bloku do histórie a reset inputu
-        terminalBody.appendChild(newBlock);
-        this.value = '';
+    // Pridanie bloku do histórie a reset inputu
+    terminalBody.appendChild(newBlock);
+    this.value = '';
 
-        // Automatické posunutie na spodok terminálu
-        terminalBody.scrollTop = terminalBody.scrollHeight;
-      }
-    });
+    // Automatické posunutie na spodok terminálu
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+  }
+});
 
-    // Udržiavanie inputu stále aktívneho pri kliknutí kamkoľvek do terminálu
-    document.querySelector('.terminal-window').addEventListener('click', () => {
-      terminalInput.focus();
-    });
+// Udržiavanie inputu stále aktívneho pri kliknutí kamkoľvek do terminálu
+document.querySelector('.terminal-window').addEventListener('click', () => {
+  terminalInput.focus();
+});

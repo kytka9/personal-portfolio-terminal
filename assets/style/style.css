@@ -268,7 +268,7 @@
     .warp-link:hover,
     .project-card a:hover,
     .output-text a:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     /* Zabezpečí, že farba sa nezmení ani po kliknutí na odkaz (visited) */
