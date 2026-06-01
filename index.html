@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ján Klimek - Warp Portfolio</title>
+  <link rel="stylesheet" href="assets/style/style.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="terminal-window">
+
+    <div class="terminal-top-bar">
+      <div class="mac-buttons">
+        <div class="mac-dot close"></div>
+        <div class="mac-dot minimize"></div>
+        <div class="mac-dot maximize"></div>
+      </div>
+      <div class="terminal-tabs">
+        <div class="terminal-tab">
+          <i class="fa-solid fa-terminal" style="font-size: 0.75rem;"></i> ~/personal-portfolio
+        </div>
+      </div>
+    </div>
+
+    <div class="terminal-body" id="terminalBody">
+
+      <div class="warp-block">
+        <div class="prompt-line">
+          <div>~/personal-portfolio git:(<span>master</span>)</div>
+          <div>(0.012s)</div>
+        </div>
+        <div class="command-text">welcome.sh</div>
+        <div class="output-text" id="welcomeOutput">
+          🇸🇰 Ahoj, ja som <strong style="color: #fff;">Ján Klimek</strong>. Vítam ťa na mojom interaktívnom
+          portfóliu.<br>
+          Skús do spodného riadku napísať príkaz <span style="color: var(--warp-accent-green);">help</span> pre zoznam
+          možností.<br><br>
+        </div>
+        <div class="output-text" id="welcomeOutput">
+          🇬🇧 Hi, I'm <strong style="color: #fff;">Ján Klimek</strong>. Welcome to my interactive portfolio.<br>
+          Try typing the command <span style="color: var(--warp-accent-green);">help</span> in the bottom line for a
+          list of options.
+
+          <br><br>
+          <small style="color: var(--text-muted);">For English type: <code class="keyword">lang en</code></small>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="terminal-bottom-input">
+      <div class="input-tag" id="currentPath">~/personal-portfolio</div>
+      <div class="input-cursor-line">
+        <span>></span>
+        <input type="text" id="terminalInput"
+          placeholder="Napíš príkaz (help, ls, env, skills, code-pr, life-pr, contact)..." autofocus autocomplete="off">
+      </div>
+    </div>
+
+  </div>
+
+<script src="assets/script/script.js"></script>
+
+</body>
+
+</html>
