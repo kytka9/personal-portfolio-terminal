@@ -367,24 +367,37 @@ const commands = {
     help: `
           <div class="prompt">Available commands:</div>
           <ul style="list-style: none; padding-left: 10px; line-height: 1.6;">
-            <li><span class="highlight">lang [sk/en]</span> - Change language (e.g. <code class="keyword">lang sk</code>)</li>
-            <li><span class="highlight">ls / help</span> - List all available commands</li>
+            <li><span class="highlight">lang [sk/en]</span> - Change language (e.g., <code class="keyword">lang en</code>)</li>
+            <li><span class="highlight">ls / help</span> - List available commands</li>
             <li><span class="highlight">clear</span> - Clear terminal history</li>
             <br>
-            <li><span class="highlight">env</span> - My development environment & setup</li>
+            <li><span class="highlight">env</span> - My development environment</li>
             <li><span class="highlight">skills</span> - Technical skills and technologies</li>
-            <li><span class="highlight">code-pr</span> - Coding & software projects</li>
-            <li><span class="highlight">life-pr</span> - Personal projects & achievements</li>
+            <li><span class="highlight">code</span> - My programming projects</li>
+            <li><span class="highlight">life</span> - Personal projects and achievements</li>
+            <li><span class="highlight">exp</span> - Work experience</li>
+            <li><span class="highlight">edu</span> - Education</li>
             <br>
+            <li><span class="highlight">about</span> - Brief info about me</li>
             <li><span class="highlight">hobby</span> - What I do in my free time</li>
-            <li><span class="highlight">matrix</span> - Run console easter-egg</li>
-            <li><span class="highlight">contact</span> - Display contact details & CV</li>
+            <li><span class="highlight">matrix</span> - Launch an easter egg in the console</li>
+            <li><span class="highlight">contact</span> - Show contact details and resume</li>
           </ul>
         `,
     ls: `
           <div class="prompt">Available sections (commands):</div>
           <div style="display: flex; gap: 15px; flex-wrap: wrap; font-family: monospace;">
-            <span class="highlight">lang</span> <span class="highlight">env</span> <span class="highlight">skills</span> <span class="highlight">code-pr</span> <span class="highlight">life-pr</span> <span class="highlight">hobby</span> <span class="highlight">matrix</span> <span class="highlight">contact</span> <span class="highlight">clear</span>
+            <span class="highlight">neofetch</span>
+            <span class="highlight">env</span>
+            <span class="highlight">skills</span>
+            <span class="highlight">code</span>
+            <span class="highlight">life</span>
+            <span class="highlight">exp</span>
+            <span class="highlight">edu</span>
+            <span class="highlight">about</span>
+            <span class="highlight">hobby</span>
+            <span class="highlight">matrix</span>
+            <span class="highlight">contact</span>
           </div>
         `,
     env: `
@@ -421,7 +434,7 @@ const commands = {
           </div>
         `,
     skills: `
-          <div class="prompt">Tech Skills & Stack</div>
+          <div class="prompt">Tech Skills & Technologies</div>
           <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 10px;">
             <div> 
               <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 5px;">Frontend:</div>
@@ -450,8 +463,8 @@ const commands = {
             </div>
           </div>
         `,
-    'code-pr': `
-          <div class="prompt">Showcase of my work and technical solutions</div>
+    code: `
+          <div class="prompt">Showcase of My Work & Technical Solutions</div>
           <div class="project-grid">
             
             <div class="project-card" style="grid-column: 1 / -1;">
@@ -463,13 +476,13 @@ const commands = {
                   <i class="fab fa-js" style="color: #f7df1e;"></i>
                 </div>
               </div>
-              <p style="margin: 10px 0;">An interactive card in the form of a terminal. Introducing myself and my work with an emphasis on speed, minimalism, and semantic code.</p>
+              <p style="margin: 10px 0;">An interactive portfolio website styled as a terminal terminal. Showcasing my profile and work with a strong emphasis on performance, minimalism, and semantic code.</p>
               <ul style="list-style: square; padding-left: 20px; margin: 12px 0; font-size: 0.9rem; color: var(--text-main);">
                 <li>Slovak and English localization (real-time language switching)</li>
               </ul>
               <div style="margin-top: 12px;">
                 <a href="https://github.com/kytka9/personal-portfolio-terminal" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-input); border: 1px solid var(--border-color); padding: 5px 12px; border-radius: 4px; font-size: 0.85rem;">
-                  <i class="fab fa-github"></i> GitHub Repository
+                  <i class="fab fa-github"></i> Code
                 </a>
               </div>
             </div>
@@ -479,10 +492,12 @@ const commands = {
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                   <h3 class="highlight" style="margin: 0;">kytka9notes</h3>
                   <div class="tech-badge-container">
+                    <i class="fab fa-html5" style="color: #e34f26; font-size: 1.1rem;"></i>
+                    <i class="fab fa-css3-alt" style="color: #1572b6; font-size: 1.1rem;"></i>
                     <i class="fab fa-js" style="color: #f7df1e;"></i>
                   </div>
                 </div>
-                <p style="margin-bottom: 15px;">Find code before you open Google - a handy cheat sheet for developers.</p>
+                <p style="margin-bottom: 15px;">Find the code snippet before you even open Google - a handy cheat sheet for developers.</p>
               </div>
               <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
                 <a href="https://kytka9.github.io/kytka9notes/" target="_blank" style="background: rgba(34, 211, 238, 0.1); border: 1px solid var(--accent-cyan); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fas fa-eye"></i> Live View</a>
@@ -496,10 +511,12 @@ const commands = {
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                   <h3 class="highlight" style="margin: 0; font-size: 1.1rem;">Colorado FansHub</h3>
                   <div class="tech-badge-container">
-                    <i class="fab fa-html5" style="color: #e34f26;"></i>
+                    <i class="fab fa-html5" style="color: #e34f26; font-size: 1.1rem;"></i>
+                    <i class="fab fa-css3-alt" style="color: #1572b6; font-size: 1.1rem;"></i>
+                    <i class="fab fa-js" style="color: #f7df1e;"></i>
                   </div>
                 </div>
-                <p style="margin-bottom: 15px;">Interactive web platform for NHL fans. Implementation of responsive design and dynamic content.</p>
+                <p style="margin-bottom: 15px;">An interactive web platform for NHL fans. Featuring responsive layout design and dynamic content integration.</p>
               </div>
               <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
                 <a href="https://kytka9.github.io/Colorado_Avalanche_fanshub/" target="_blank" style="background: rgba(34, 211, 238, 0.1); border: 1px solid var(--accent-cyan); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fas fa-eye"></i> Live View</a>
@@ -509,48 +526,198 @@ const commands = {
 
           </div>
         `,
-    'life-pr': `
-          <div class="prompt">Projects I have been part of</div>
+    life: `
+          <div class="prompt">Projects I've Been Part Of</div>
           <div class="project-grid">
             <div class="project-card">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                 <h3 class="highlight" style="margin: 0;"><i class="fa-solid fa-person-snowboarding"></i> Take a Deck</h3>
+                <div class="tech-badge-container">
+                    <small>2010-2014</small>
+                  </div>
               </div>
-              <p style="margin-bottom: 12px;">Organizer of cultural and sports events under the auspices of Džizo crew. Focus on community development and extreme sports.</p>
+              <p style="margin-bottom: 12px;">Organizer of cultural and sports events hosted by the Džizo crew. Main focus on community development and action sports.</p>
               <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                <a href="https://www.facebook.com/DzizoCrew/" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-brands fa-facebook"></i> Facebook</a>
-                <a href="http://makovica.sk" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i> Makovica</a>
+                <a href="https://www.facebook.com/DzizoCrew/" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://maps.app.goo.gl/VnCCcKmAKyNTrxwm7" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="http://makovica.sk" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i></a>
               </div>
             </div>
 
             <div class="project-card">
-              <h3 class="highlight" style="margin-bottom: 10px;"><i class="fa-brands fa-redhat"></i> WeifouDilla</h3>
-              <p>Key co-creator of an online fashion collective. Specialization in curation, restoration, and sustainable sale of rare vintage pieces.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 class="highlight" style="margin-bottom: 10px;"><i class="fa-brands fa-redhat"></i> WeifouDilla</h3>
+                <div class="tech-badge-container">
+                    <small>2017-2019</small>
+                </div>
+              </div>
+              <p>Core co-creator of a fashion startup from inception to operation, managing the e-shop, handling social media platforms, and organic community building. Focused on sustainable retail of rare vintage items.</p>
             </div>
           </div>
         `,
-    hobby: `
-          <div class="prompt">My personal interests and hobbies</div>
-          <p style="margin-bottom: 12px;">🌲 Bushcraft <small style="color: var(--text-muted);">// Status: Fully offline in nature</small></p>
-          <p style="margin-bottom: 12px;">⚔️ Age of Empires 2 <small style="color: var(--text-muted);">// Strategy level: Expert</small></p>
-          <p style="margin-bottom: 12px;">🏂 Snowboarding <small style="color: var(--text-muted);">// Gravity: Tested on slopes</small></p>
+    exp: `
+          <div class="prompt">Work Experience</div>
+          <div class="project-grid">
+            
+            <div class="project-card" style="grid-column: 1 / -1;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+                <h3 class="highlight" style="margin: 0;">Production Worker / Supervisor</h3>                
+                <div class="tech-badge-container">2023 - 2025</div>
+              </div>
+              <p style="margin: 10px 0;">Maintained high precision standards while shaping composite molds for the aerospace industry. Proven ability to flawlessly interpret complex blueprints, ensuring zero-error delivery within tight production schedules.</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/FA6zo3THeJUpKKJKA" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i> Laupheim, DE</a>
+                <a href="https://www.piekenbrink.de" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i> piekenbrink.de</a>
+                <p>Piekenbrink GmbH, 88471 Laupheim, DE</p>
+              </div>
+            </div>  
+
+            <div class="project-card" style="grid-column: 1 / -1;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+                <h3 class="highlight" style="margin: 0;">Team Leader</h3>                
+                <div class="tech-badge-container">2022 - 2023</div>
+              </div>
+              <p style="margin: 10px 0;">Ensured 100% data integrity within system databases, facilitating seamless communications in a fast-paced English-speaking team environment.</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/HxEnTy4gPkSb8aM29" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i> Delft, NL</a>
+                <a href="https://www.hanos.nl/nl/groothandel/HANOS-Denhaag-Delft" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i> hanos.nl</a>
+                <p>Hanos Horeca Groothandel, 2616 LZ Delft, NL</p>
+              </div>
+            </div>  
+
+            <div class="project-card" style="grid-column: 1 / -1;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+                <h3 class="highlight" style="margin: 0;">Courier</h3>                
+                <div class="tech-badge-container">2019 - 2022</div>
+              </div>
+              <p style="margin: 10px 0;">Operated within complex digital dispatching logistics systems, troubleshooting unexpected challenges in the field while meeting strict service-level agreements (SLAs).</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/JozEioePCoX9ujge9" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i> Dordrecht, NL</a>
+                <p>MCR Transport B.V., 3316 KH Dordrecht, NL</p>
+              </div>
+            </div>  
+
+            <div class="project-card" style="grid-column: 1 / -1;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+                <h3 class="highlight" style="margin: 0;">Housekeeping</h3>                
+                <div class="tech-badge-container">2017 - 2019</div>
+              </div>
+              <p style="margin: 10px 0;">Managed hospitality property operations and directly handled custom guest requests and facility readiness.</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/zfUR3wkDUres35FU6" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i> Hermagor, AT</a>
+                <a href="https://www.vmglanz.at" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i> vmglanz.at</a>
+                <p>VM Glanz Gmbh, 9620 Hermagor, AT</p>
+              </div>
+            </div>  
+
+          </div>
         `,
+    edu: `
+          <div class="prompt">Education</div>
+          <div class="project-grid">
+            <div class="project-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 class="highlight" style="margin: 0;">ITnetwork Academy Slovakia</h3>
+                <div class="tech-badge-container">
+                    <small>2025</small>
+                  </div>
+              </div>
+              <p style="margin-bottom: 12px;">OOP, web application development in Java, database management, UML modeling</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://www.itnetwork.sk" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i></a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 class="highlight" style="margin: 0;">University of Economics in Bratislava</h3>
+                <div class="tech-badge-container">
+                    <small>2014 - 2016</small>
+                  </div>
+              </div>
+              <p style="margin-bottom: 12px;">Faculty of International Trade (three semesters completed)</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/hKj9dK7ARJSJshZa7" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="https://www.euba.sk" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i></a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 class="highlight" style="margin: 0;">Leonard Stöckel Gymnasium in Bardejov</h3>
+                <div class="tech-badge-container">
+                    <small>2009 - 2013</small>
+                  </div>
+              </div>
+              <p style="margin-bottom: 12px;">Academic Focus: Mathematics and Geography</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/hr3njGnMAe1zVMDD8" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="https://gymlsbj.edupage.org" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i></a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 class="highlight" style="margin: 0;">Michal Vilec School of Art in Bardejov</h3>
+                <div class="tech-badge-container">
+                    <small>2001 - 2009</small>
+                  </div>
+              </div>
+              <p style="margin-bottom: 12px;">Painting, classical drawing, sculpting, photography, linocut</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://maps.app.goo.gl/DDBL37R9UAfFmo5B6" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="https://www.zusmvileca.com" target="_blank" style="background: var(--bg-input); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;"><i class="fa-solid fa-link"></i></a>
+              </div>
+            </div>
+
+          </div>
+        `,
+    neofetch: `
+        <div class="warp-block">
+          <div class="output-text">
+            <pre style="font-family: monospace; line-height: 1.3; margin: 0;">
+          ██╗██╗  ██╗    <span class="highlight">kytka9</span>@<span class="keyword">portfolio-os</span>
+          ██║██║ ██╔╝    -------------------------
+          ██║█████╔╝     OS: Ján Klimek WebOS v1.0.0
+          ██║██╔═██╗     Kernel: Human_Brain_2026.06
+        ████║██║  ██╗    Uptime: 30+ years
+        ╚═══╝╚═╝  ╚═╝    Shell: kytka-sh 2.4
+                         IDE: VS Code / Cursor
+                         Fav-Lang: JavaScript
+
+                        <span style="display: inline-block; width: 12px; height: 12px; background: var(--warp-accent); border-radius: 2px;"></span> <span style="display: inline-block; width: 12px; height: 12px; background: var(--warp-accent-green); border-radius: 2px;"></span> <span style="display: inline-block; width: 12px; height: 12px; background: var(--warp-text-main); border-radius: 2px;"></span> <span style="display: inline-block; width: 12px; height: 12px; background: var(--warp-text-muted); border-radius: 2px;"></span>
+            </pre>
+          </div>
+        </div>
+        `,
+    about: `
+          <div class="output-text" id="welcomeOutput">
+          <p>...</p>
+          <p>While my core technical foundation stems from an intensive multi-month academy course, my actual everyday workflow is strictly forged by today's digital landscape. In the era of AI, self-directed learning from home is more effective than ever before. I don't treat AI as a shortcut, but rather as an engineering accelerator — it enables me to dive deep into complex computing concepts, analyze architectural best practices, and constantly refactor for optimal code quality. Thanks to this modern ecosystem, I am able to stay fully up to date with shifting trends and deliver solutions that are fast, modern, and clean.</p>
+          </div>
+          <p>...</p>
+          `,
+    hobby: `
+          <div class="prompt">Hobbies I Enjoy in My Free Time</div>
+          <p style="margin-bottom: 12px;">🌲 Bushcraft <small style="color: var(--text-muted);">// Status: Fully offline out in the wild</small></p>
+          <p style="margin-bottom: 12px;">⚔️ Age of Empires 2 <small style="color: var(--text-muted);">// Strategy Level: Expert</small></p>
+          <p style="margin-bottom: 12px;">🏂 Snowboarding <small style="color: var(--text-muted);">// Gravity: Fully tested on the slopes</small></p>         
+          `,
     matrix: `
           <div class="prompt">./matrix.sh</div>
           <p style="color: var(--warp-accent-green); font-weight: bold;"><i class="fas fa-user-secret"></i> Wake up, Neo... The Matrix has you !!!</p>
-          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Check your developer console (F12) for a surprise!</p>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Check out your developer tools console (F12) for a little surprise!</p>
         `,
     contact: `
-          <div class="prompt">Contact Details & Resume</div>
+          <div class="prompt">Contact Information & Resume</div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
             <p><i class="fas fa-envelope" style="width: 25px; color: var(--warp-accent);"></i> <strong>Email:</strong> <a href="mailto:klimekjani@gmail.com">klimekjani@gmail.com</a></p>
             <p><i class="fab fa-github" style="width: 25px; color: var(--warp-accent);"></i> <strong>GitHub:</strong> <a href="https://github.com/kytka9" target="_blank">github.com/kytka9</a></p>
             <p><i class="fab fa-discord" style="width: 25px; color: var(--warp-accent);"></i> <strong>Discord:</strong> <span style="color: var(--text-main);">kytka9</span></p>
             <p><i class="fab fa-dev" style="width: 25px; color: var(--warp-accent);"></i> <strong>DEV.to:</strong> <a href="https://dev.to/kytka9" target="_blank">dev.to/kytka9</a></p>
-            <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent-green);"></i> <strong>Resume (SK):</strong> <a href="https://github.com/kytka9/personal-portfolio-terminal/blob/master/resume_sk.html" target="_blank" class="highlight">Open Resume</a></p>
+            <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent-green);"></i> <strong>Resume (EN):</strong> <a href="https://github.com/kytka9/personal-portfolio-terminal/blob/master/resume_sk.html" target="_blank" class="highlight">Open Resume</a></p>
           </div>
         `,
-    cv: `Opening resume... <a href="https://github.com/kytka9/personal-portfolio-terminal/blob/master/resume_sk.html" class="warp-link" target="_blank">Click here to open cv.html</a>`
   }
 };
 
