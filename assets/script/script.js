@@ -356,7 +356,7 @@ const commands = {
           <div class="prompt">Kontaktné údaje & Životopis</div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
 
-            <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent);"></i> <strong>Resume :</strong> <a href="../assets/resume/html/resume_sk.html" target="_blank" class="highlight">Open Resume</a></p>
+            <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent);"></i> <strong>Resume :</strong> <a href="../personal-portfolio-terminal/assets/resume/html/resume_sk.html" target="_blank" class="highlight">Open Resume</a></p>
 
             <p><i class="fas fa-envelope" style="width: 25px; color: var(--warp-accent);"></i> <strong>Email:</strong> <span class="highlight" style="cursor: pointer;" onclick="copyToClipboard('klimekjani@gmail.com', this)">klimekjani@gmail.com</span></p>
             
@@ -719,7 +719,7 @@ const commands = {
           <div class="prompt">Contact Information & Resume</div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
 
-            <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent);"></i> <strong>Resume :</strong> <a href="#" target="_blank" class="highlight">Open Resume</a></p>
+            <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent);"></i> <strong>Resume :</strong> <a href="../personal-portfolio-terminal/assets/resume/html/resume_en.html" target="_blank" class="highlight">Open Resume</a></p>
 
             <p><i class="fas fa-envelope" style="width: 25px; color: var(--warp-accent);"></i> <strong>Email:</strong> <span class="highlight" style="cursor: pointer;" onclick="copyToClipboard('klimekjani@gmail.com', this)">klimekjani@gmail.com</span></p>
             
