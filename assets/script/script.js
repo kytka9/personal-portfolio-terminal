@@ -355,11 +355,18 @@ const commands = {
     contact: `
           <div class="prompt">Kontaktné údaje & Životopis</div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
-            <p><i class="fas fa-envelope" style="width: 25px; color: var(--warp-accent);"></i> <strong>Email:</strong> <a href="mailto:klimekjani@gmail.com">klimekjani@gmail.com</a></p>
-            <p><i class="fab fa-github" style="width: 25px; color: var(--warp-accent);"></i> <strong>GitHub:</strong> <a href="https://github.com/kytka9" target="_blank">github.com/kytka9</a></p>
-            <p><i class="fab fa-discord" style="width: 25px; color: var(--warp-accent);"></i> <strong>Discord:</strong> <span style="color: var(--text-main);">kytka9</span></p>
-            <p><i class="fab fa-dev" style="width: 25px; color: var(--warp-accent);"></i> <strong>DEV.to:</strong> <a href="https://dev.to/kytka9" target="_blank">dev.to/kytka9</a></p>
-            <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent-green);"></i> <strong>Životopis (SK):</strong> <a href="https://github.com/kytka9/personal-portfolio-terminal/blob/master/resume_sk.html" target="_blank" class="highlight">Otvoriť životopis</a></p>
+
+            <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent);"></i> <strong>Resume :</strong> <a href="../assets/resume/html/resume_sk.html" target="_blank" class="highlight">Open Resume</a></p>
+
+            <p><i class="fas fa-envelope" style="width: 25px; color: var(--warp-accent);"></i> <strong>Email:</strong> <span class="highlight" style="cursor: pointer;" onclick="copyToClipboard('klimekjani@gmail.com', this)">klimekjani@gmail.com</span></p>
+            
+            <p><i class="fab fa-github" style="width: 25px; color: var(--warp-accent);"></i> <strong>GitHub:</strong> <span class="highlight" style="cursor: pointer;"><a href="https://github.com/kytka9" target="_blank">github.com/kytka9</a></span></p>
+            
+            
+            <p><i class="fab fa-discord" style="width: 25px; color: var(--warp-accent);"></i> <strong>Discord:</strong> <span class="highlight" style="cursor: pointer;" onclick="copyToClipboard('kytka9', this)">kytka9</span></p>
+            
+            <p><i class="fab fa-dev" style="width: 25px; color: var(--warp-accent);"></i> <strong>DEV.to:</strong> <span class="highlight" style="cursor: pointer;"><a href="https://dev.to/kytka9" target="_blank">dev.to/kytka9</a></span></p>
+            
           </div>
         `,
   },
@@ -711,11 +718,18 @@ const commands = {
     contact: `
           <div class="prompt">Contact Information & Resume</div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
-            <p><i class="fas fa-envelope" style="width: 25px; color: var(--warp-accent);"></i> <strong>Email:</strong> <a href="mailto:klimekjani@gmail.com">klimekjani@gmail.com</a></p>
-            <p><i class="fab fa-github" style="width: 25px; color: var(--warp-accent);"></i> <strong>GitHub:</strong> <a href="https://github.com/kytka9" target="_blank">github.com/kytka9</a></p>
-            <p><i class="fab fa-discord" style="width: 25px; color: var(--warp-accent);"></i> <strong>Discord:</strong> <span style="color: var(--text-main);">kytka9</span></p>
-            <p><i class="fab fa-dev" style="width: 25px; color: var(--warp-accent);"></i> <strong>DEV.to:</strong> <a href="https://dev.to/kytka9" target="_blank">dev.to/kytka9</a></p>
-            <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent-green);"></i> <strong>Resume (EN):</strong> <a href="https://github.com/kytka9/personal-portfolio-terminal/blob/master/resume_sk.html" target="_blank" class="highlight">Open Resume</a></p>
+
+            <p><i class="fas fa-file-pdf" style="width: 25px; color: var(--warp-accent);"></i> <strong>Resume :</strong> <a href="#" target="_blank" class="highlight">Open Resume</a></p>
+
+            <p><i class="fas fa-envelope" style="width: 25px; color: var(--warp-accent);"></i> <strong>Email:</strong> <span class="highlight" style="cursor: pointer;" onclick="copyToClipboard('klimekjani@gmail.com', this)">klimekjani@gmail.com</span></p>
+            
+            <p><i class="fab fa-github" style="width: 25px; color: var(--warp-accent);"></i> <strong>GitHub:</strong> <span class="highlight" style="cursor: pointer;"><a href="https://github.com/kytka9" target="_blank">github.com/kytka9</a></span></p>
+            
+            
+            <p><i class="fab fa-discord" style="width: 25px; color: var(--warp-accent);"></i> <strong>Discord:</strong> <span class="highlight" style="cursor: pointer;" onclick="copyToClipboard('kytka9', this)">kytka9</span></p>
+            
+            <p><i class="fab fa-dev" style="width: 25px; color: var(--warp-accent);"></i> <strong>DEV.to:</strong> <span class="highlight" style="cursor: pointer;"><a href="https://dev.to/kytka9" target="_blank">dev.to/kytka9</a></span></p>
+            
           </div>
         `,
   }
@@ -830,3 +844,21 @@ terminalInput.addEventListener('keydown', function (e) {
 document.querySelector('.terminal-window').addEventListener('click', () => {
   terminalInput.focus();
 });
+
+// Kopírovanie kontaktov
+function copyToClipboard(text, element) {
+  navigator.clipboard.writeText(text).then(() => {
+    // Uložíme si pôvodný text (kytka9)
+    const originalText = element.innerText;
+    
+    // Zmeníme text na oznámenie o skopírovaní
+    element.innerText = "Copied!";
+    
+    // Po 1.2 sekunde vrátime pôvodný text späť
+    setTimeout(() => {
+      element.innerText = originalText;
+    }, 1200);
+  }).catch(err => {
+    console.error('Chyba pri kopírovaní: ', err);
+  });
+}

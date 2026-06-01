@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ján Klimek - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #0E2A35;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 20px auto;
+            background: white;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            min-height: 297mm;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            font-size: 0.85rem;
+        }
+
+        .contact-info li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info li a {
+            color: white;
+            text-decoration: none;
+
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .contact-info i {
+            width: 25px;
+            color: var(--accent-color);
+            font-size: 1rem;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.85rem;
+        }
+
+        .skills-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .skills-list i {
+            margin-right: 10px;
+            color: var(--accent-color);
+            width: 18px;
+            text-align: center;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            padding: 10px 20px;
+        }
+
+        .header {
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 0px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 2.2rem;
+        }
+
+        .header p {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            background: #f8f9fa;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .section-item {
+            margin-bottom: 15px;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1rem;
+            display: block;
+        }
+
+        .item-sub {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .item-desc {
+            font-size: 0.8rem;
+            margin: 5px 0;
+            text-align: justify;
+        }
+
+        .tech-tags {
+            font-size: 0.8rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 3px;
+        }
+
+        /* RESUME HEADER */
+        .header-nav {
+            max-width: 210mm;
+            margin: 20px auto 40px auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 0 10px;
+        }
+
+        .nav-btn {
+            flex: 1;
+            text-align: center;
+            padding: 12px 15px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .nav-btn.primary {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+
+        .nav-btn.primary:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+            }
+
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header-nav">
+        <a href="../../../index.html" class="nav-btn">
+            <i class="fa-solid fa-house"></i> Main page
+        </a>
+        <a href="../pdf/klimek_resume_english.pdf" download="klimek_resume.pdf" class="nav-btn primary">
+            <i class="fa-solid fa-file-pdf"></i> Download PDF
+        </a>
+        <a href="./resume_sk.html" class="nav-back-link nav-btn">
+            <img src="../../img/flag_icons/flag_sk.png" alt="Slovak" style="width: 25px; height: auto;" class="me-1">
+            <span>Slovak</span>
+        </a>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="container">
+        <div class="sidebar">
+            <!-- CONTACT -->
+            <h2><i class="fa-regular fa-address-card"></i> Contact</h2>
+            <ul class="contact-info">
+                <li>
+                    <a href="https://github.com/kytka9" target="_blank">
+                        <i class="fab fa-github"></i>&nbsp;github.com/kytka9&nbsp;<i
+                            class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i>
+                    </a>
+                </li>
+                <li><i class="fas fa-envelope"></i> klimekjani@gmail.com</li>
+                <li><i class="fas fa-phone"></i> +421 948 679 993</li>
+                <li><i class="fas fa-map-marker-alt"></i> Bardejov / Košice</li>
+                <li><i class="fas fa-calendar"></i> 9. august 1994</li>
+            </ul>
+            <!-- FRONTEND sidebar -->
+            <h2><i class="fas fa-laptop-code"></i> Frontend</h2>
+            <ul class="skills-list">
+                <li><i class="fab fa-html5"></i> HTML5</li>
+                <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                <li><i class="fab fa-bootstrap"></i> Bootstrap 5</li>
+                <li><i class="fab fa-js"></i> JavaScript</li>
+                <!-- tailwind icon doesnt working, use svg instead -->
+                <li style="display: flex; align-items: center; gap: 8px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="#38bdf8"
+                            d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C8.337 13.382 6.976 12 4.001 12z" />
+                    </svg>
+                    Tailwind 4
+                </li>
+                <li><i class="fa-brands fa-react"></i> React</li>
+            </ul>
+            <!-- BACKEND sidebar -->
+            <h2><i class="fa-solid fa-server"></i> Backend</h2>
+            <ul class="skills-list">
+                <li><i class="fab fa-git-alt"></i> Git / GitHub</li>
+                <li><i class="fab fa-java"></i> Java</li>
+                <li><i class="fa-brands fa-php"></i> php</li>
+                <li><i class="fas fa-database"></i> SQL & MySQL</li>
+                <li><i class="fab fa-node-js"></i> Node.js</li>
+                <li><i class="fas fa-project-diagram"></i> UML Modeling</li>
+            </ul>
+            <!-- SOFTSKILLS -->
+            <h2><i class="fa-solid fa-lightbulb"></i>&nbsp;Soft-skills</h2>
+            <ul class="skills-list">
+                <li><i class="fa-solid fa-check"></i>Documentation Handling</li>
+                <li><i class="fa-solid fa-check"></i>Pixel-Perfect Precision</li>
+                <li><i class="fa-solid fa-check"></i>Teamwork & Cooperation</li>
+                <li><i class="fa-solid fa-check"></i>Zero-error mindset</li>
+            </ul>
+            <!-- LANGUAGES -->
+            <h2><i class="fa-solid fa-earth-americas"></i> Languages</h2>
+            <ul class="skills-list">
+                <li><i class="fa-solid fa-sterling-sign"></i> English (C1)</li>
+                <li><i class="fa-solid fa-euro-sign"></i> Deutsch (A1)</li>
+            </ul>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <!-- HEADER -->
+            <div class="header">
+                <h1>Ján Klimek</h1>
+                <a href="https://kytka9.github.io/personal-portfolio-terminal/" target="_blank" style="text-decoration: none;">
+                    <p>Digital resume <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                </a>
+            </div>
+            <!-- PROFILE -->
+            <section>
+                <h3><i class="fa-solid fa-user"></i></i>&nbsp;Profile</h3>
+                <div class="section-item">
+                    <p class="item-desc">
+                        Technically oriented developer focused on modern frontend and clean code architecture.
+                        Leveraging experience from the aerospace industry, I bring extreme attention to detail and
+                        pixel-perfect execution to programming. I am adaptable, accustomed to multicultural
+                        environments, and fluent in English.
+                    </p>
+                </div>
+            </section>
+            <!-- PROJECTS -->
+            <section>
+                <h3><i class="fa-regular fa-copyright"></i>&nbsp;Projects</h3>
+                <div class="section-item">
+                    <p class="item-desc">
+                        <strong>Personal Portfolio (2026):</strong>&nbsp;A digital version of my resume, performance-optimized and built with a modern tech stack (Vite.js, Bootstrap 5, Sass).
+                    </p>
+                    <p class="item-desc">
+                        <strong>Colorado Avalanche Fanpage (2025):</strong>&nbsp;A responsive website focused on clean style architecture and modern design (HTML, CSS, JS).
+                    </p>
+                    <p class="item-desc">
+                        <strong>WeifouDilla (2017-2019):</strong>&nbsp;Core co-creator of a fashion project, involved in everything from initial concept to full-scale operation, e-shop management, social media administration, and online community building.
+                    </p>
+                    <p class="item-desc">
+                        <strong>Take a deck (2010-2014):</strong>&nbsp;Organizer of cultural and sports events under the auspices of the Džizo crew. Focus on community development and extreme sports.
+                    </p>
+                </div>
+            </section>
+            <!-- WORK EXPERIENCE -->
+            <section>
+                <h3><i class="fa-solid fa-briefcase"></i>&nbsp;Work Experience</h3>
+                <div class="section-item">
+                    <p class="item-desc">
+                        <strong>Production Worker / Supervisor (2023–2025):</strong>&nbsp;Piekenbrink GmbH, DE - high-precision shaping of composite molds for the aviation industry. Demonstrated ability to work flawlessly according to complex technical blueprints with a strict zero-error mindset.
+                    </p>
+                    <p class="item-desc">
+                        <strong>Team Leader (2022-2023):</strong>&nbsp;Hanos Horeca Groothandel, NL - responsible for ensuring 100% data integrity within the company database. Effective coordination and communication within a diverse, english-speaking team.
+                    </p>
+                    <p class="item-desc">
+                        <strong>Courier (2019–2022):</strong>&nbsp;MCR Transport B.V., NL - utilized digital logistics systems for efficient route planning and tracking, experienced in real-time problem solving, consistently maintained high standards for on-time delivery schedules.
+                    </p>
+                    <p class="item-desc">
+                        <strong>Housekeeping (2017–2019):</strong>&nbsp;VM Glanz Gmbh, AT - managed daily operations for apartment maintenance and guest services. Ensured high-quality standards and fulfilled specific guest requirements to enhance satisfaction.
+                    </p>
+                </div>
+            </section>
+            <!-- EDUCATION -->
+            <section>
+                <h3><i class="fa-solid fa-graduation-cap"></i>&nbsp;Education</h3>
+                <div class="section-item">
+                    <p class="item-desc">
+                        <strong>ITnetwork Academy Slovakia (2025):</strong>&nbsp;OOP, Web Applications, MySQL.
+                    </p>
+                    <p class="item-desc">
+                        <strong>University of Economics in Bratislava (2014-2016):</strong>&nbsp;International Business.
+                    </p>
+                    <p class="item-desc">
+                        <strong>Leonard Stöckel Grammar School (2009-2013):</strong>&nbsp;Focus: Mathematics and Geography.
+                    </p>
+                    <p class="item-desc">
+                        <strong>Michal Vilec School of Art (2001-2009):</strong>&nbsp;Painting, drawing, sculpting, photography, and
+                        lino printing.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>
