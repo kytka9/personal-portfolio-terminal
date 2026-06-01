@@ -607,8 +607,35 @@ terminalInput.addEventListener('keydown', function (e) {
     // Ak používateľ zavolá matrix, vygenerujeme aj log do F12 konzoly
     if (cmd === 'matrix') {
       console.clear();
-      console.log("%cWake up, Neo...", "color: #34d399; font-size: 20px; font-weight: bold;");
-      console.log("%cThe Matrix has you...", "color: #34d399; font-size: 14px;");
+      console.log(
+  "%c" +
+  "   ________________________________\n" +
+  "  |  ____________________________  |\n" +
+  "  | |                            | |\n" +
+  "  | |  Loading Matrix...         | |\n" +
+  "  | |                            | |\n" +
+  "  | |  [▓▓▓▓▓▓▓▓▓▓░░░░░░░░] 52% | |\n" +
+  "  | |                            | |\n" +
+  "  | |  > downloading kung-fu.js  | |\n" +
+  "  | |  > patching reality.css    | |\n" +
+  "  | |  > fixing IE support...    | |\n" +
+  "  | |                            | |\n" +
+  "  | |  ERROR:                    | |\n" +
+  "  | |  Task impossible.          | |\n" +
+  "  | |____________________________| |\n" +
+  "  |________________________________|\n" +
+  "        _______|    |_______\n" +
+  "       /                    \\\n" +
+  "      /______________________\\\\\n",
+  `
+    color: #34d399;
+    background: #000;
+    font-family: monospace;
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow: 0 0 6px #34d399;
+  `
+);
     }
 
     // Vytvorenie nového Warp bloku
